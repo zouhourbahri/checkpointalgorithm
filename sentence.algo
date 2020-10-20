@@ -1,0 +1,28 @@
+ALGORITHM SENTENCE
+VAR
+    c , nbr_character , nbr_mot , nbr_vowel : INTEGER :=0
+
+CONST 
+    Sentence :STRING 
+
+BEGIN
+    Read(Sentence)
+    WHILE (Sentence[c] < > '.' ) THEN
+    IF (Sentence[c] = 'A' OR Sentence[c] ='E' OR Sentence[c] = 'I' OR Sentence[c] = 'O' OR Sentence[c] = 'U' OR Sentence[c] = 'Y' OR Sentence[c] = 'a' OR Sentence[c] ='e' OR Sentence[c] = 'i' OR Sentence[c] = 'o' OR Sentence[c] = 'u' OR Sentence[c] = 'y') THEN
+        nbr_vowel := nbr_vowel + 1 ;
+        nbr_character := nbr_character + 1;
+        ELSE_IF ( Sentence[c] = ' ') THEN
+        nbr_character := nbr_character + 1;
+        nbr_mot := nbr_mot + 1 ;
+    ELSE 
+    nbr_character := nbr_character + 1;
+    END_IF
+        c:=c+1;    
+    END_WHILE       
+    nbr_character := nbr_character + 1;
+    nbr_mot := nbr_mot + 1 ;
+    Write("number of vowels ="nbr_vowel)
+    Write(" number of characters ="nbr_character)
+    Write("number of words ="nbr_mot)
+
+END
