@@ -1,0 +1,54 @@
+ALGORITHM SommmeMethode1
+VAR
+    sum , long-set1 , long-set2 , i , j , c: INTEGER;
+CONST 
+    set1 , set2 : ARRAY_OF INTEGER[];
+BEGIN
+    //Déclaration des deux tableux
+    Write("Insérer la longeur de set1")
+    Read(long-set1);
+    Write("Insérer la longeur de set2")
+    Read(long-sett2);
+    Write("Remplir set1")
+    FOR (i FROM 0 TO long-set1-1 STEP 1) DO
+        Read(set1[i]);
+    END_FOR
+    Write("Remplir set2")
+    FOR (i FROM 0 TO long-set2-1 STEP 1) DO
+        Read(set2[i]);
+    END_FOR
+    //COMPARING
+    j:=0;
+    sum:=0;
+    c:=0;
+    //Parcous set1
+    WHILE(j<long-set1)DO
+        FOR (i FROM 0 TO long-set2-1 STEP 1) DO
+            IF(set1[j]=set2[i])THEN
+                c:=c+1;
+            END_IF
+        END_FOR
+        IF(c=0)THEN
+                sum:=sum+set1[j];
+            END_IF
+        j=j+1;
+    END_WHILE
+    j:=0;
+    c:=0;
+    //Parcours set2
+    WHILE(j<long-set2)DO
+        FOR (i FROM 0 TO long-set1-1 STEP 1) DO
+            IF(set2[j]=set1[i])THEN
+                c:=c+1;
+            END_IF
+        END_FOR
+        IF(c=0)THEN
+                sum:=sum+set2[j];
+            END_IF
+        j=j+1;
+    END_WHILE
+    Write("La somme est")
+    Write(sum)
+END
+
+
